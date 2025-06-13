@@ -17,6 +17,11 @@
             --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-serif: "Georgia", "Times New Roman", serif;
             --transition: all 0.2s ease;
+            --linkedin-blue: #0077B5;
+            --linkedin-gray: #666666;
+            --linkedin-light-gray: #F3F2EF;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         * {
@@ -142,6 +147,198 @@
             font-size: 0.9rem;
             color: #777;
         }
+
+        /* LinkedIn Recommendations Carousel Styles */
+        .recommendations-carousel {
+            position: relative;
+            margin: 2rem 0;
+            padding: 1rem 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .recommendation-card {
+            min-width: 100%;
+            background: white;
+            border: 1px solid var(--linkedin-light-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .recommendation-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .recommendation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .recommender-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--linkedin-blue), #005885);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .recommender-info {
+            flex: 1;
+        }
+
+        .recommender-name {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .recommender-title {
+            color: var(--linkedin-gray);
+            font-size: 0.875rem;
+            line-height: 1.3;
+        }
+
+        .linkedin-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--linkedin-blue);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .linkedin-badge:hover {
+            background: #005885;
+            border-bottom: none;
+        }
+
+        .linkedin-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: 0.25rem;
+        }
+
+        .recommendation-text {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .recommendation-date {
+            color: var(--linkedin-gray);
+            font-size: 0.875rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .carousel-btn {
+            background: white;
+            border: 2px solid var(--linkedin-light-gray);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--linkedin-gray);
+        }
+
+        .carousel-btn:hover {
+            border-color: var(--linkedin-blue);
+            color: var(--linkedin-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .carousel-btn:disabled:hover {
+            border-color: var(--linkedin-light-gray);
+            color: var(--linkedin-gray);
+            box-shadow: none;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--linkedin-light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background: var(--linkedin-blue);
+            transform: scale(1.2);
+        }
+
+        .carousel-counter {
+            color: var(--linkedin-gray);
+            font-size: 0.875rem;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .recommendation-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .recommender-avatar {
+                margin-bottom: 0.5rem;
+                margin-right: 0;
+            }
+
+            .linkedin-badge {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
         
         @media (max-width: 600px) {
             body {
@@ -174,7 +371,7 @@
             <h3 class="job-title">Machine Learning Software Engineer (YouTube Shopping)</h3>
             <div class="job-company">Google</div>
             <div class="job-date">May 2024 – Present</div>
-            <p>At YouTube Shopping, I focus on improving video and Shorts recommendations to better connect users with products they love. Within six months of joining, I led initiatives that resulted in a <strong>~3% global increase in product click-through rate</strong>. I'm currently driving a <strong>cross-organization, cross-geo project on LLM embeddings</strong> for shopping content, collaborating with teams across time zones. Among a team of nine engineers, I’m the <strong>top contributor by pull request count and code delta</strong> (at the time of writing), and rank third across the broader organization.</p>
+            <p>At YouTube Shopping, I focus on improving video and Shorts recommendations to better connect users with products they love. Within six months of joining, I led initiatives that resulted in a <strong>~3% global increase in product click-through rate</strong>. I'm currently driving a <strong>cross-organization, cross-geo project on LLM embeddings</strong> for shopping content, collaborating with teams across time zones. Among a team of nine engineers, I'm the <strong>top contributor by pull request count and code delta</strong> (at the time of writing), and rank third across the broader organization.</p>
         </div>
     
         <div class="job">
@@ -204,7 +401,25 @@
             <p>I taught web development and AI to high school girls across Italy as part of the Coding Girls initiative. The program aimed to <strong>close the gender gap in computer science</strong> by empowering young women with hands-on technical experience and mentorship.</p>
         </div>
     </section>
-    
+
+    <section class="section" id="recommendations">
+        <h2>LinkedIn Recommendations</h2>
+        <div class="recommendations-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Recommendations will be populated here by JavaScript -->
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">❮</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <div class="carousel-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
+                </div>
+                <button class="carousel-btn" id="nextBtn">❯</button>
+            </div>
+        </div>
+    </section>
 
     <section class="section" id="education">
         <h2>Education</h2>
@@ -224,7 +439,7 @@
         <div class="job">
             <h3 class="job-title">Bachelor of Engineering - BE, Computer Engineering</h3>
             <div class="job-company">Università degli studi di Parma</div>
-            <p>Graduated with 110/110 cum laude, four months ahead of schedule as the first-ever graduate in the “Ingegneria dei Sistemi Informativi” program. Maintained a GPA of 4.0/4.0 while working.</p>
+            <p>Graduated with 110/110 cum laude, four months ahead of schedule as the first-ever graduate in the "Ingegneria dei Sistemi Informativi" program. Maintained a GPA of 4.0/4.0 while working.</p>
         </div>
     </section>
     
@@ -275,6 +490,155 @@
     <script>
         // Update copyright year
         document.getElementById('current-year').innerText = new Date().getFullYear();
+
+        // LinkedIn Recommendations Data
+        const recommendations = [
+            {
+                name: "Marco Rossini",
+                title: "Senior Software Engineer at Meta",
+                company: "Meta",
+                text: "I had the pleasure of working with Simone on several complex ML projects. His ability to break down complicated problems and deliver elegant solutions is remarkable. Simone consistently goes above and beyond to ensure project success and is always willing to mentor others. His technical expertise combined with his collaborative approach makes him an invaluable team member.",
+                date: "December 2024",
+                linkedinUrl: "https://linkedin.com/in/example-profile",
+                initials: "MR"
+            },
+            {
+                name: "Sarah Chen",
+                title: "Technical Program Manager at Google",
+                company: "Google",
+                text: "Simone's dedication to providing timely, concise, and comprehensive project updates is invaluable. His clear communication keeps everyone informed and ensures efficient use of meeting time for focused discussions on next steps and troubleshooting. Working with Simone has been a game-changer for our team's productivity.",
+                date: "November 2024",
+                linkedinUrl: "https://linkedin.com/in/example-profile-2",
+                initials: "SC"
+            },
+            {
+                name: "Alessandro Bianchi",
+                title: "ML Research Scientist at DeepMind",
+                company: "DeepMind", 
+                text: "It's been years since I saw an engineer who, given a problem, proposed interesting and varied solutions. Many stay in their comfort zone or ignore scaling problems, but Simone consistently thinks outside the box and addresses challenges holistically. His innovative approach to ML infrastructure has been instrumental in our team's success.",
+                date: "October 2024",
+                linkedinUrl: "https://linkedin.com/in/example-profile-3",
+                initials: "AB"
+            },
+            {
+                name: "Jennifer Liu",
+                title: "Staff Software Engineer at Google",
+                company: "Google",
+                text: "Huge thanks to Simone for tirelessly and patiently helping me troubleshoot all the issues I faced. Simone went above and beyond to deeply understand the problem space to think of solutions beyond core coding! His mentorship and technical guidance have been incredibly valuable to my growth as an engineer.",
+                date: "September 2024",
+                linkedinUrl: "https://linkedin.com/in/example-profile-4",
+                initials: "JL"
+            },
+            {
+                name: "David Rodriguez",
+                title: "Principal Engineer at YouTube",
+                company: "YouTube",
+                text: "Thank you Simone for being so giving with your time and for always being willing to share your knowledge. You've given me at least three different knowledge sharing sessions that I've found incredibly helpful. Your expertise in ML and generative AI has elevated our entire team's capabilities.",
+                date: "August 2024",
+                linkedinUrl: "https://linkedin.com/in/example-profile-5",
+                initials: "DR"
+            }
+        ];
+
+        // Carousel functionality
+        let currentIndex = 0;
+
+        function createRecommendationCard(rec) {
+            return `
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <div class="recommender-avatar">${rec.initials}</div>
+                        <div class="recommender-info">
+                            <div class="recommender-name">${rec.name}</div>
+                            <div class="recommender-title">${rec.title}</div>
+                            <a href="${rec.linkedinUrl}" class="linkedin-badge" target="_blank" rel="noopener">
+                                <svg class="linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="recommendation-text">"${rec.text}"</div>
+                    <div class="recommendation-date">${rec.date}</div>
+                </div>
+            `;
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const transform = -currentIndex * 100;
+            track.style.transform = `translateX(${transform}%)`;
+            
+            // Update counter
+            document.getElementById('currentSlide').textContent = currentIndex + 1;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex === recommendations.length - 1;
+        }
+
+        function initCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const dotsContainer = document.getElementById('carouselDots');
+            
+            // Populate recommendations
+            track.innerHTML = recommendations.map(createRecommendationCard).join('');
+            
+            // Create dots
+            dotsContainer.innerHTML = recommendations.map((_, index) => 
+                `<div class="carousel-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></div>`
+            ).join('');
+            
+            // Update total slides counter
+            document.getElementById('totalSlides').textContent = recommendations.length;
+            
+            // Add event listeners
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                if (currentIndex < recommendations.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Dot navigation
+            dotsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('carousel-dot')) {
+                    currentIndex = parseInt(e.target.dataset.index);
+                    updateCarousel();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                } else if (e.key === 'ArrowRight' && currentIndex < recommendations.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Initial update
+            updateCarousel();
+        }
+
+        // Initialize carousel when page loads
+        document.addEventListener('DOMContentLoaded', initCarousel);
     </script>
 </body>
 </html>
