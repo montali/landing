@@ -305,6 +305,17 @@
 
         .clickable {
             cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 8px;
+            padding: 8px;
+            display: inline-block;
+        }
+
+        .clickable:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: rgba(0, 0, 0, 0.05);
+            /* Light hover background */
         }
 
         @media (max-width: 768px) {
@@ -348,7 +359,8 @@
         <h2>About</h2>
         <p>I'm convinced we're living through years our kids will study in history class as a turning point—what some
             have called <strong>"a compressed 21st century."</strong> Machine learning isn't just another tech trend;
-            <strong>it's transforming everything around us</strong>.</p>
+            <strong>it's transforming everything around us</strong>.
+        </p>
         <p>After joining Google, I dove into <strong>making cutting-edge AI more accessible</strong>. Now at YouTube
             Shopping, I'm channeling that obsession into something concrete: <strong>connecting people with content that
                 actually matters to them</strong>.</p>
@@ -371,7 +383,8 @@
                 <strong>cross-organization, cross-geo project on LLM embeddings</strong> for shopping content,
                 collaborating with teams across time zones. Among a team of nine engineers, I'm the <strong>top
                     contributor by pull request count and code delta</strong> (at the time of writing), and rank third
-                across the broader organization.</p>
+                across the broader organization.
+            </p>
         </div>
 
         <div class="job">
