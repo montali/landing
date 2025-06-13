@@ -303,6 +303,10 @@
             margin: 0 1rem;
         }
 
+        .clickable {
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .recommendation-header {
                 flex-direction: column;
@@ -619,8 +623,8 @@
             return `
                 <div class="recommendation-card">
                     <div class="recommendation-header">
-                        <div class="recommender-avatar">${rec.initials}</div>
-                        <div class="recommender-info">
+                        <div class="recommender-avatar clickable" onclick="window.open('${rec.linkedinUrl}', '_blank');">${rec.initials}</div>
+                        <div class="recommender-info clickable">
                             <div onclick="window.open('${rec.linkedinUrl}', '_blank');" class="recommender-name">${rec.name}</div>
                             <div class="recommender-title">${rec.title}</div>
                         </div>
