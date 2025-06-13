@@ -306,6 +306,9 @@
         .clickable {
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .with-border {
             border-radius: 8px;
             padding: 8px;
             display: inline-block;
@@ -637,7 +640,7 @@
                 <div class="recommendation-card">
                     <div class="recommendation-header">
                         <div class="recommender-avatar clickable" onclick="window.open('${rec.linkedinUrl}', '_blank');">${rec.initials}</div>
-                        <div class="recommender-info clickable">
+                        <div class="recommender-info clickable with-border">
                             <div onclick="window.open('${rec.linkedinUrl}', '_blank');" class="recommender-name">${rec.name}</div>
                             <div class="recommender-title">${rec.title}</div>
                         </div>
