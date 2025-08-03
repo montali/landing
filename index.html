@@ -111,7 +111,22 @@
         .job-company {
             font-style: italic;
             color: var(--accent);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.995rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            object-fit: contain;
+        }
+
+        .company-logo {
+            width: 22px !important;
+            height: 22px !important;
+            max-width: 22px;
+            max-height: 22px;
+            border-radius: 3px;
+            flex-shrink: 0;
+            object-fit: contain;
+            vertical-align: middle;
         }
 
         .job-date {
@@ -364,9 +379,12 @@
             have called <strong>"a compressed 21st century."</strong> Machine learning isn't just another tech trend;
             <strong>it's transforming everything around us</strong>.
         </p>
-        <p>After joining Google, I dove into making <strong>cutting-edge AI more accessible</strong>. At YouTube Shopping, I channeled
-            that obsession into <strong>connecting people with content</strong> that actually matters to them. Now at Meta, I'm pushing
-            the boundaries further—leading the <strong>data engine that powers foundation models for VR</strong>, working at the
+        <p>After joining Google, I dove into making <strong>cutting-edge AI more accessible</strong>. At YouTube
+            Shopping, I channeled
+            that obsession into <strong>connecting people with content</strong> that actually matters to them. Now at
+            Meta, I'm pushing
+            the boundaries further—leading the <strong>data engine that powers foundation models for VR</strong>,
+            working at the
             intersection where AI meets the future of human connection.
         </p>
         <p>I'm a <strong>heads-down worker</strong> and <strong>strong generalist</strong> who adapts quickly to
@@ -380,7 +398,10 @@
 
         <div class="job">
             <h3 class="job-title">Senior ML Software Engineer</h3>
-            <div class="job-company">Meta</div>
+            <div class="job-company">
+                <img src="meta.svg" class="company-logo" />
+                Meta
+            </div>
             <div class="job-date">July 2025 – Present</div>
             <p>As a Senior ML Software Engineer at Meta, my role spans computer vision for <strong>VR, ML
                     infrastructure, and
@@ -399,6 +420,7 @@
 
         <div class="job">
             <h3 class="job-title">Machine Learning Software Engineer (YouTube Shopping)</h3>
+            <img src="google.svg" class="company-logo" />
             <div class="job-company">Google</div>
             <div class="job-date">May 2024 – end of June 2025</div>
             <p>At YouTube Shopping, I focus on improving video and Shorts recommendations to better connect users with
@@ -413,6 +435,7 @@
 
         <div class="job">
             <h3 class="job-title">Machine Learning Software Engineer (ML & AI Infrastructure)</h3>
+            <img src="google.svg" class="company-logo" />
             <div class="job-company">Google</div>
             <div class="job-date">May 2022 – May 2024</div>
             <p>I helped build a general-purpose ML/LLM platform used to train and serve large-scale models across
